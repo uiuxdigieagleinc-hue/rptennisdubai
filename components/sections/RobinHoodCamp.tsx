@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import GalleryGrid from "@/components/GalleryGrid";
 import { StarIcon } from "@/components/Icons";
-import RobinHoodLink from "@/components/RobinHoodLink";
 import RobinHoodSignup from "@/components/RobinHoodSignup";
 import { img, robinHoodGallery } from "@/content/images";
 
@@ -72,17 +71,27 @@ export default function RobinHoodCamp({ headingLevel = "h2" }: { headingLevel?: 
 
             <div className="rh__actions" data-reveal>
               <RobinHoodSignup>Request camp info</RobinHoodSignup>
-              <RobinHoodLink type="academy" className="rh__link">
-                About the Tennis Academy
-              </RobinHoodLink>
+              <Link href="/about-us/" className="btn btn--outline">
+                Know more about us
+              </Link>
             </div>
           </div>
         </div>
 
         <div className="rh__academy">
-          <p className="eyebrow" data-reveal>
-            Inside the Tennis Academy
-          </p>
+          <div className="rh__academy-head">
+            <p className="eyebrow" data-reveal>
+              Inside Robin Hood Academy
+            </p>
+            <div data-reveal>
+              <h3 className="h3 rh__academy-title">The Robin Hood Tennis Academy</h3>
+              <p className="text rh__academy-text">
+                A week-long intensive inside camp for players who want to take their game further. Campers train on six
+                plexi-pave courts with a team of pro coaches, mixing small-group drills, match play and fitness, and still
+                enjoy everything else camp life has to offer.
+              </p>
+            </div>
+          </div>
           <div className="rh__cards">
             {academy.map((a) => (
               <div key={a.title} className="feature rh__card" data-reveal>
