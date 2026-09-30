@@ -1,5 +1,6 @@
 import Image from "next/image";
 import RobinHoodLink from "@/components/RobinHoodLink";
+import RobinHoodSignup from "@/components/RobinHoodSignup";
 import { img } from "@/content/images";
 
 // Facts from the Robin Hood section brief (../robin-hood-section.html)
@@ -60,9 +61,7 @@ export default function RobinHoodCamp({ headingLevel = "h2" }: { headingLevel?: 
             </ul>
 
             <div className="rh__actions" data-reveal>
-              <RobinHoodLink type="inquiry" className="btn">
-                Request camp info
-              </RobinHoodLink>
+              <RobinHoodSignup>Request camp info</RobinHoodSignup>
               <RobinHoodLink type="academy" className="rh__link">
                 About the Tennis Academy
               </RobinHoodLink>

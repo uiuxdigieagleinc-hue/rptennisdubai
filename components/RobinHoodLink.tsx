@@ -1,15 +1,7 @@
 "use client";
 
-/* RP Tennis → Robin Hood referral tracking (see ../HANDOFF.md)
-   Adds UTM + ref params to Robin Hood links and sends a GA4 event on click
-   (works with GTM dataLayer or gtag). Values must match what Robin Hood agrees to. */
-export const RH_REF = {
-  utm_source: "rptennisdubai",
-  utm_medium: "referral",
-  utm_campaign: "robinhood_summer_2027",
-  ref: "RPTENNIS",
-};
-
+// Robin Hood's own pages. We don't add any parameters — referrals are tracked on our side
+// (see RobinHoodSignup) — but clicks still go to GA4 if it's installed.
 export const RH_URLS = {
   inquiry: "https://robinhoodmaine.campintouch.com/V2/family/inquiryForm.aspx",
   academy: "https://www.robinhoodcamp.com/maine-summer-camp-activities/tennis-academy-maine-summer-camp/",
@@ -17,26 +9,25 @@ export const RH_URLS = {
 
 type Win = Window & { dataLayer?: unknown[]; gtag?: (...a: unknown[]) => void };
 
-const withRef = (url: string, type: string) => {
-  const u = new URL(url);
-  Object.entries(RH_REF).forEach(([k, v]) => u.searchParams.set(k, v));
-  u.searchParams.set("utm_content", type);
-  return u.toString();
-};
+export function trackEvent(event: string, data: Record<string, string>) {
+  const w = window as Win;
+  w.dataLayer = w.dataLayer || [];
+  w.dataLayer.push({ event, ...data });
+  if (typeof w.gtag === "function") w.gtag("event", event, data);
+}
 
 type Props = { type: keyof typeof RH_URLS; className?: string; children: React.ReactNode };
 
 export default function RobinHoodLink({ type, className, children }: Props) {
-  const url = withRef(RH_URLS[type], type);
-  const track = () => {
-    const w = window as Win;
-    const data = { link_type: type, link_url: url, ref_code: RH_REF.ref };
-    w.dataLayer = w.dataLayer || [];
-    w.dataLayer.push({ event: "robinhood_referral_click", ...data });
-    if (typeof w.gtag === "function") w.gtag("event", "robinhood_referral_click", data);
-  };
+  const url = RH_URLS[type];
   return (
-    <a className={className} data-rh={type} href={url} target="_blank" rel="noopener" onClick={track}>
+    <a
+      className={className}
+      href={url}
+      target="_blank"
+      rel="noopener"
+      onClick={() => trackEvent("robinhood_click", { link_type: type, link_url: url })}
+    >
       {children}
     </a>
   );

@@ -1625,6 +1625,73 @@
     font-size: 15px;
   }
 }
+/* Robin Hood signup dialog */
+.rh-dialog {
+  width: min(560px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  padding: 40px 30px 30px;
+  border: 0;
+  border-radius: 0;
+  background: var(--white);
+  color: var(--text);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+.rh-dialog::backdrop {
+  background: rgba(24, 28, 35, 0.7);
+}
+.rh-dialog[open] {
+  animation: fadeInUp 0.4s ease both;
+}
+.rh-dialog__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  padding: 10px;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+.rh-dialog__close svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+.rh-dialog .eyebrow {
+  padding-bottom: 14px;
+}
+.rh-dialog__title {
+  padding-bottom: 14px;
+  font-size: 28px;
+  line-height: 38px;
+  text-transform: uppercase;
+}
+.rh-dialog__lead {
+  margin-bottom: 24px;
+}
+.rh-dialog__done .text {
+  margin-bottom: 28px;
+}
+.rh-dialog__done strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.rh-dialog__go {
+  width: 100%;
+  padding: 14px 17px;
+}
+@media (max-width: 767px) {
+  .rh-dialog {
+    padding: 36px 20px 20px;
+  }
+  .rh-dialog__title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
+
 .site-footer__rh {
   max-width: 300px;
   margin: 24px 0 0;

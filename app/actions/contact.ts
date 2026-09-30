@@ -1,10 +1,7 @@
 "use server";
 
-import { Resend } from "resend";
 import { locationOptions, programOptions, timingOptions, type ContactState } from "@/content/form";
-
-const esc = (s: string) =>
-  s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
+import { isEmail, isPhone, sendTableEmail } from "@/lib/email";
 
 export async function sendContact(_prev: ContactState, form: FormData): Promise<ContactState> {
   // Honeypot: bots fill every field
@@ -23,8 +20,8 @@ export async function sendContact(_prev: ContactState, form: FormData): Promise<
   };
 
   const errors: ContactState["errors"] = {};
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) errors.email = "Please enter a valid email.";
-  if (!/^[+\d][\d\s()-]{6,}$/.test(data.phone)) errors.phone = "Please enter a valid phone number.";
+  if (!isEmail(data.email)) errors.email = "Please enter a valid email.";
+  if (!isPhone(data.phone)) errors.phone = "Please enter a valid phone number.";
   if (!programOptions.includes(data.program)) errors.program = "Please select a program.";
   if (!locationOptions.includes(data.location)) errors.location = "Please select a location.";
   if (!timingOptions.includes(data.timing)) errors.timing = "Please select a timing.";
@@ -32,14 +29,6 @@ export async function sendContact(_prev: ContactState, form: FormData): Promise<
   const values = { ...data, consent: form.get("consent") === "on" ? "on" : "" };
   if (Object.keys(errors).length)
     return { status: "error", message: "Please check the highlighted fields.", errors, values };
-
-  const key = process.env.RESEND_API_KEY;
-  const to = (process.env.CONTACT_TO || "rallypointtennisacademy@gmail.com").split(",").map((s) => s.trim());
-  const from = process.env.CONTACT_FROM || "RP Tennis Website <onboarding@resend.dev>";
-  if (!key) {
-    console.error("[contact] RESEND_API_KEY is not set");
-    return { status: "error", message: "Sorry, the form is not available right now. Please message us on WhatsApp.", values };
-  }
 
   const rows: [string, string][] = [
     ["Name", data.name || "—"],
@@ -52,26 +41,14 @@ export async function sendContact(_prev: ContactState, form: FormData): Promise<
     ["Sent from", data.page || "—"],
   ];
 
-  const html = `<h2 style="font-family:Arial,sans-serif">New enquiry — rptennisdubai.com</h2>
-<table style="font-family:Arial,sans-serif;font-size:14px;border-collapse:collapse">${rows
-    .map(
-      ([k, v]) =>
-        `<tr><td style="padding:6px 12px 6px 0;color:#6B6C68;vertical-align:top"><b>${k}</b></td><td style="padding:6px 0;white-space:pre-wrap">${esc(v)}</td></tr>`
-    )
-    .join("")}</table>`;
-
-  try {
-    const { error } = await new Resend(key).emails.send({
-      from,
-      to,
-      replyTo: data.email,
-      subject: `New enquiry: ${data.program} — ${data.name || data.email}`,
-      html,
-      text: rows.map(([k, v]) => `${k}: ${v}`).join("\n"),
-    });
-    if (error) throw new Error(error.message);
-  } catch (e) {
-    console.error("[contact] send failed", e);
+  const sent = await sendTableEmail({
+    title: "New enquiry — rptennisdubai.com",
+    subject: `New enquiry: ${data.program} — ${data.name || data.email}`,
+    rows,
+    replyTo: data.email,
+  });
+  if (!sent.ok) {
+    console.error("[contact] send failed:", sent.reason);
     return { status: "error", message: "Sorry, something went wrong. Please try again or message us on WhatsApp.", values };
   }
 
