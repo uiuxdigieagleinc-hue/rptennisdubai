@@ -123,6 +123,22 @@ function LeadForm() {
           <input id="rh-phone" name="phone" type="tel" placeholder="WhatsApp / Phone" autoComplete="tel" required defaultValue={v.phone} {...invalid("phone")} />
           {errMsg("phone")}
         </div>
+        <div className="form__field">
+          <label className="sr-only" htmlFor="rh-location">
+            Location (Required)
+          </label>
+          <input
+            id="rh-location"
+            name="location"
+            type="text"
+            placeholder="Your location (city / area, e.g. Dubai Marina)"
+            autoComplete="address-level2"
+            required
+            defaultValue={v.location}
+            {...invalid("location")}
+          />
+          {errMsg("location")}
+        </div>
         {state.status === "error" && (
           <p className="form__msg" role="alert">
             {state.message}
