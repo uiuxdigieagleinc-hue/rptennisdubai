@@ -1,7 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
+import GalleryGrid from "@/components/GalleryGrid";
+import { StarIcon } from "@/components/Icons";
 import RobinHoodLink from "@/components/RobinHoodLink";
 import RobinHoodSignup from "@/components/RobinHoodSignup";
-import { img } from "@/content/images";
+import { img, robinHoodGallery } from "@/content/images";
 
 // Facts from the Robin Hood section brief (../robin-hood-section.html)
 const facts = [
@@ -9,6 +12,13 @@ const facts = [
   { value: "3–6 hrs", label: "On court every day during Tennis Academy weeks" },
   { value: "75 min", label: "Small-group drills with pro coaches" },
   { value: "35+", label: "Daily camp activities off court" },
+];
+
+const academy = [
+  { title: "Seven-day intensive", text: "At least 3 hours of tennis every day of the Academy week." },
+  { title: "Pro coaching team", text: "Small-group drills with four pro coaches and assistant coaches." },
+  { title: "Daily private lesson", text: "Optional private or semi-private lesson every day." },
+  { title: "Match play & fitness", text: "Conditioning, footwork and daily match play for tournament strategy." },
 ];
 
 // Robin Hood Camp — follows the site's section patterns (eyebrow + heading row, divider rows, lime accents).
@@ -46,8 +56,8 @@ export default function RobinHoodCamp({ headingLevel = "h2" }: { headingLevel?: 
                 camp in Brooksville, Maine, set between a freshwater lake and the ocean.
               </p>
               <p>
-                Players from Dubai can join him for intensive Tennis Academy weeks, with daily match play, footwork and an
-                optional private lesson every day.
+                Players from Dubai can join him for intensive Tennis Academy weeks. Camp sessions run from 2 to 7 weeks,
+                and campers can book more than one Academy week.
               </p>
             </div>
 
@@ -66,6 +76,37 @@ export default function RobinHoodCamp({ headingLevel = "h2" }: { headingLevel?: 
                 About the Tennis Academy
               </RobinHoodLink>
             </div>
+          </div>
+        </div>
+
+        <div className="rh__academy">
+          <p className="eyebrow" data-reveal>
+            Inside the Tennis Academy
+          </p>
+          <div className="rh__cards">
+            {academy.map((a) => (
+              <div key={a.title} className="feature rh__card" data-reveal>
+                <StarIcon className="feature__icon" />
+                <div>
+                  <h3 className="feature__title">{a.title}</h3>
+                  <p className="feature__text">{a.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="rh__gallery">
+          <div className="rh__gallery-head">
+            <p className="eyebrow" data-reveal>
+              Coach Mahi on court
+            </p>
+            <Link href="/gallery/" className="rh__link" data-reveal>
+              View full gallery
+            </Link>
+          </div>
+          <div data-reveal>
+            <GalleryGrid items={robinHoodGallery} className="gallery--mosaic" />
           </div>
         </div>
       </div>

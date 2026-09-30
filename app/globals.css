@@ -505,6 +505,14 @@ textarea {
   .mobile-menu .mobile-menu__sub a {
     padding-left: 40px;
   }
+  .mobile-menu__parent {
+    display: flex;
+  }
+  .mobile-menu .mobile-menu__parent button {
+    flex: none;
+    width: auto;
+    border-left: 1px solid rgba(2, 1, 1, 0.15);
+  }
   .mobile-menu button svg {
     width: 9px;
     height: 14px;

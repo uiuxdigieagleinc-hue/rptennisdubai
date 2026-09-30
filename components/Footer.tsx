@@ -5,7 +5,7 @@ import { img } from "@/content/images";
 import { FacebookIcon, InstagramIcon } from "./Icons";
 
 // The live footer shows a dead "Other" item; here its children are listed instead.
-const links = nav.flatMap((i) => i.children ?? [i]);
+const links = nav.flatMap((i) => (i.href === "#" && i.children ? i.children : [i]));
 
 export default function Footer() {
   return (

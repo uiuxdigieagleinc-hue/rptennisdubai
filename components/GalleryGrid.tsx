@@ -7,7 +7,7 @@ import { AngleDownIcon, CloseIcon } from "./Icons";
 type Item = { src: StaticImageData; alt: string };
 
 // Elementor gallery: 4/2/2 columns, square tiles, dark overlay on hover, lightbox.
-export default function GalleryGrid({ items }: { items: Item[] }) {
+export default function GalleryGrid({ items, className = "" }: { items: Item[]; className?: string }) {
   const [open, setOpen] = useState<number | null>(null);
   const close = useCallback(() => setOpen(null), []);
   const step = useCallback((d: number) => setOpen((i) => (i === null ? i : (i + d + items.length) % items.length)), [items.length]);
@@ -29,7 +29,7 @@ export default function GalleryGrid({ items }: { items: Item[] }) {
 
   return (
     <>
-      <div className="gallery">
+      <div className={`gallery ${className}`}>
         {items.map((it, i) => (
           <a
             key={it.src.src}

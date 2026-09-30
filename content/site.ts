@@ -32,7 +32,16 @@ export const nav: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us/" },
   { label: "Grounds", href: "/grounds/" },
-  { label: "Programs", href: "/programs/" },
+  {
+    label: "Programs",
+    href: "/programs/",
+    children: [
+      { label: "1 on 1 Coaching", href: "/programs/#private" },
+      { label: "Semi Private", href: "/programs/#semi-private" },
+      { label: "Group Training", href: "/programs/#group" },
+      { label: "Robin Hood Camp", href: "/robin-hood-camp/" },
+    ],
+  },
   {
     label: "Other",
     href: "#",
@@ -40,7 +49,6 @@ export const nav: NavItem[] = [
       { label: "Gallery", href: "/gallery/" },
       { label: "Reviews", href: "/reviews/" },
       { label: "Blog", href: "/blog/" },
-      { label: "Robin Hood Camp", href: "/robin-hood-camp/" },
     ],
   },
   { label: "Contact us", href: "/contact-us/" },

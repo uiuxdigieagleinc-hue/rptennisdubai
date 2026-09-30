@@ -4,24 +4,28 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { nav, whatsapp } from "@/content/site";
+import { nav, whatsapp, type NavItem } from "@/content/site";
 import { img } from "@/content/images";
 import { AngleDownIcon, BarsIcon, CloseIcon, WhatsAppIcon } from "./Icons";
+
+const path = (href: string) => href.split("#")[0];
 
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [subOpen, setSubOpen] = useState(false);
+  const [subOpen, setSubOpen] = useState<string | null>(null);
 
   // Close the mobile menu when a link in it is followed
   const closeOnLink = (e: React.MouseEvent) => {
     if ((e.target as HTMLElement).closest("a")) {
       setOpen(false);
-      setSubOpen(false);
+      setSubOpen(null);
     }
   };
 
-  const current = (href: string) => (pathname === href ? "page" : undefined);
+  const current = (href: string) => (!href.includes("#") && pathname === href ? "page" : undefined);
+  const inSection = (item: NavItem) =>
+    pathname === item.href || !!item.children?.some((c) => path(c.href) === pathname);
 
   return (
     <header className="site-header">
@@ -38,16 +42,26 @@ export default function Header() {
               {nav.map((item) =>
                 item.children ? (
                   <li key={item.label}>
-                    <button
-                      type="button"
-                      className={`menu__link${item.children.some((c) => c.href === pathname) ? " is-active" : ""}`}
-                      aria-haspopup="true"
-                    >
-                      {item.label}
-                      <span className="menu__arrow">
-                        <AngleDownIcon />
-                      </span>
-                    </button>
+                    {item.href === "#" ? (
+                      <button type="button" className={`menu__link${inSection(item) ? " is-active" : ""}`} aria-haspopup="true">
+                        {item.label}
+                        <span className="menu__arrow">
+                          <AngleDownIcon />
+                        </span>
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className={`menu__link${inSection(item) ? " is-active" : ""}`}
+                        aria-current={current(item.href)}
+                        aria-haspopup="true"
+                      >
+                        {item.label}
+                        <span className="menu__arrow">
+                          <AngleDownIcon />
+                        </span>
+                      </Link>
+                    )}
                     <ul className="submenu">
                       {item.children.map((c) => (
                         <li key={c.href}>
@@ -90,14 +104,35 @@ export default function Header() {
 
       <nav id="mobile-menu" className={`mobile-menu${open ? " is-open" : ""}`} aria-label="Mobile" onClick={closeOnLink}>
         <ul>
-          {nav.map((item) =>
-            item.children ? (
+          {nav.map((item) => {
+            if (!item.children)
+              return (
+                <li key={item.href}>
+                  <Link href={item.href} aria-current={current(item.href)}>
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            const isOpen = subOpen === item.label;
+            const toggle = () => setSubOpen(isOpen ? null : item.label);
+            return (
               <li key={item.label}>
-                <button type="button" aria-expanded={subOpen} onClick={() => setSubOpen((v) => !v)}>
-                  {item.label}
-                  <AngleDownIcon />
-                </button>
-                {subOpen && (
+                {item.href === "#" ? (
+                  <button type="button" aria-expanded={isOpen} onClick={toggle}>
+                    {item.label}
+                    <AngleDownIcon />
+                  </button>
+                ) : (
+                  <div className="mobile-menu__parent">
+                    <Link href={item.href} aria-current={current(item.href)}>
+                      {item.label}
+                    </Link>
+                    <button type="button" aria-expanded={isOpen} aria-label={`Show ${item.label} submenu`} onClick={toggle}>
+                      <AngleDownIcon />
+                    </button>
+                  </div>
+                )}
+                {isOpen && (
                   <ul className="mobile-menu__sub">
                     {item.children.map((c) => (
                       <li key={c.href}>
@@ -109,14 +144,8 @@ export default function Header() {
                   </ul>
                 )}
               </li>
-            ) : (
-              <li key={item.href}>
-                <Link href={item.href} aria-current={current(item.href)}>
-                  {item.label}
-                </Link>
-              </li>
-            )
-          )}
+            );
+          })}
         </ul>
       </nav>
     </header>

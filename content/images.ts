@@ -49,6 +49,16 @@ export const img = {
 
 export const heroSlides = [hero1, hero2, hero3];
 
+// Robin Hood section mosaic (first image is the large one).
+// Placeholders from our own shoots — swap for approved Robin Hood Camp photos when they arrive.
+export const robinHoodGallery = [
+  { src: coachGroup, alt: "Coach Mahi with his players" },
+  { src: court1, alt: "Players training on court" },
+  { src: mg0230, alt: "Junior player hitting a forehand" },
+  { src: coachCourt, alt: "Coach Mahi giving one-on-one feedback" },
+  { src: mg0066, alt: "Group drill on court" },
+];
+
 // Same order as the live gallery page
 export const gallery = [
   { src: coachGroup, alt: "Coach Mahi with students on court" },

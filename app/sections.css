@@ -1625,6 +1625,53 @@
     font-size: 15px;
   }
 }
+/* Robin Hood — academy cards + photo mosaic */
+.rh__academy,
+.rh__gallery {
+  margin-top: 90px;
+  padding-inline: 10px;
+}
+.rh__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.rh__card {
+  width: auto;
+  min-height: 260px;
+}
+.rh__gallery-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+}
+.gallery--mosaic .gallery__item:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.gallery--mosaic .gallery__item:first-child img {
+  object-position: center 80%;
+}
+@media (max-width: 992px) {
+  .rh__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .rh__academy,
+  .rh__gallery {
+    margin-top: 60px;
+  }
+  .rh__cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .rh__card {
+    min-height: 0;
+  }
+}
+
 /* Robin Hood signup dialog */
 .rh-dialog {
   width: min(560px, calc(100vw - 32px));
