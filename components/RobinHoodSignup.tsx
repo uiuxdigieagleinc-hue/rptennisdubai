@@ -11,7 +11,15 @@ const REDIRECT_SECONDS = 6;
 
 // "Request camp info": collect name / email / phone on our site (our referral record),
 // then send the family on to Robin Hood's inquiry form.
-export default function RobinHoodSignup({ className = "btn", children }: { className?: string; children: React.ReactNode }) {
+export default function RobinHoodSignup({
+  className = "btn",
+  children,
+  enquiry = false,
+}: {
+  className?: string;
+  children: React.ReactNode;
+  enquiry?: boolean; // true: details go to us only, no redirect to Robin Hood
+}) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [formKey, setFormKey] = useState(0);
 
@@ -36,13 +44,13 @@ export default function RobinHoodSignup({ className = "btn", children }: { class
         <button type="button" className="rh-dialog__close" onClick={close} aria-label="Close">
           <CloseIcon />
         </button>
-        <LeadForm key={formKey} />
+        <LeadForm key={formKey} enquiry={enquiry} />
       </dialog>
     </>
   );
 }
 
-function LeadForm() {
+function LeadForm({ enquiry }: { enquiry: boolean }) {
   const pathname = usePathname();
   const [state, action, pending] = useActionState(sendRobinHoodLead, initial);
   const [left, setLeft] = useState(REDIRECT_SECONDS);
@@ -51,15 +59,26 @@ function LeadForm() {
 
   // After a successful submit, count down and continue to Robin Hood
   useEffect(() => {
-    if (state.status !== "success") return;
+    if (state.status !== "success" || enquiry) return;
     trackEvent("robinhood_lead", { page: pathname });
     const t = setInterval(() => setLeft((s) => s - 1), 1000);
     return () => clearInterval(t);
-  }, [state.status, pathname]);
+  }, [state.status, pathname, enquiry]);
 
   useEffect(() => {
-    if (state.status === "success" && left <= 0) window.location.assign(RH_URLS.inquiry);
-  }, [left, state.status]);
+    if (!enquiry && state.status === "success" && left <= 0) window.location.assign(RH_URLS.inquiry);
+  }, [left, state.status, enquiry]);
+
+  if (state.status === "success" && enquiry) {
+    return (
+      <div className="rh-dialog__done" role="status">
+        <h2 id="rh-dialog-title" className="rh-dialog__title">
+          Thanks{state.name ? `, ${state.name.split(" ")[0]}` : ""}!
+        </h2>
+        <p className="text">Coach Mahi has your details and will get back to you shortly about Robin Hood Camp.</p>
+      </div>
+    );
+  }
 
   if (state.status === "success") {
     return (
@@ -89,15 +108,18 @@ function LeadForm() {
 
   return (
     <>
-      <p className="eyebrow">Step 1 of 2</p>
+      {!enquiry && <p className="eyebrow">Step 1 of 2</p>}
       <h2 id="rh-dialog-title" className="rh-dialog__title">
-        Request Robin Hood Camp info
+        {enquiry ? "Enquire about Robin Hood Camp" : "Request Robin Hood Camp info"}
       </h2>
       <p className="text rh-dialog__lead">
-        Leave your details for Coach Mahi, then we&apos;ll take you to Robin Hood Camp&apos;s inquiry form.
+        {enquiry
+          ? "Leave your details and Coach Mahi will get back to you."
+          : "Leave your details for Coach Mahi, then we’ll take you to Robin Hood Camp’s inquiry form."}
       </p>
       <form className="form" action={action}>
         <input type="hidden" name="page" value={pathname} />
+        <input type="hidden" name="kind" value={enquiry ? "enquiry" : "referral"} />
         <div className="form__hp" aria-hidden="true">
           <label htmlFor="rh-company">Company</label>
           <input id="rh-company" name="company" tabIndex={-1} autoComplete="off" />
@@ -145,7 +167,7 @@ function LeadForm() {
           </p>
         )}
         <button className="btn form__submit" type="submit" disabled={pending}>
-          {pending ? "Saving…" : "Continue to Robin Hood"}
+          {pending ? "Sending…" : enquiry ? "Send enquiry" : "Continue to Robin Hood"}
         </button>
       </form>
     </>

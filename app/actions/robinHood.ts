@@ -27,10 +27,11 @@ export async function sendRobinHoodLead(_prev: RobinHoodLeadState, form: FormDat
   if (Object.keys(errors).length)
     return { status: "error", message: "Please check the highlighted fields.", errors, values: data };
 
+  const enquiry = get("kind") === "enquiry";
   const when = new Date().toLocaleString("en-GB", { timeZone: "Asia/Dubai", dateStyle: "medium", timeStyle: "short" });
   const sent = await sendTableEmail({
-    title: "Robin Hood Camp referral — rptennisdubai.com",
-    subject: `Robin Hood Camp referral: ${data.name}`,
+    title: `Robin Hood Camp ${enquiry ? "enquiry" : "referral"} — rptennisdubai.com`,
+    subject: `Robin Hood Camp ${enquiry ? "enquiry" : "referral"}: ${data.name}`,
     rows: [
       ["Name", data.name],
       ["Email", data.email],
@@ -38,7 +39,12 @@ export async function sendRobinHoodLead(_prev: RobinHoodLeadState, form: FormDat
       ["Location", data.location],
       ["Date (Dubai)", when],
       ["Sent from", data.page || "—"],
-      ["Next step", "Family was sent to Robin Hood's inquiry form and asked to use the same name and email there."],
+      [
+        "Next step",
+        enquiry
+          ? "Enquiry only — please contact the family."
+          : "Family was sent to Robin Hood's inquiry form and asked to use the same name and email there.",
+      ],
     ],
     replyTo: data.email,
   });

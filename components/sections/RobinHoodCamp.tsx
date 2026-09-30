@@ -71,9 +71,9 @@ export default function RobinHoodCamp({ headingLevel = "h2" }: { headingLevel?: 
 
             <div className="rh__actions" data-reveal>
               <RobinHoodSignup>Request camp info</RobinHoodSignup>
-              <Link href="/about-us/" className="btn btn--outline">
-                Know more about us
-              </Link>
+              <RobinHoodSignup enquiry className="btn btn--outline">
+                Enquire now
+              </RobinHoodSignup>
             </div>
           </div>
         </div>
