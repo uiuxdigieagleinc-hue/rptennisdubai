@@ -2106,10 +2106,3 @@
     font-size: 12px;
   }
 }
-
-/* ---------- header Contact button is hidden on phones (live site) ---------- */
-@media (max-width: 767px) {
-  .site-header__cta .btn {
-    display: none;
-  }
-}
