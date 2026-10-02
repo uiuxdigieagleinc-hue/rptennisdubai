@@ -319,18 +319,18 @@ textarea {
   padding: 10px;
 }
 .site-header__logo {
-  width: 20%;
+  width: 12%;
 }
 .site-header__logo img {
   width: 70px;
   height: 70px;
 }
 .site-header__nav {
-  width: 60%;
+  width: 73%;
   align-items: center;
 }
 .site-header__cta {
-  width: 20%;
+  width: 15%;
   align-items: flex-end;
 }
 
@@ -357,6 +357,13 @@ textarea {
   background: none;
   border: 0;
   cursor: pointer;
+}
+/* small laptops: keep all menu items on one line */
+@media (max-width: 1200px) {
+  .menu__link {
+    padding-inline: 7px;
+    font-size: 13px;
+  }
 }
 .menu__link:hover,
 .menu__link[aria-current="page"],

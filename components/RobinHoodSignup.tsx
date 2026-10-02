@@ -10,7 +10,7 @@ const initial: RobinHoodLeadState = { status: "idle" };
 const REDIRECT_SECONDS = 6;
 
 // "Request camp info": collect name / email / phone on our site (our referral record),
-// then send the family on to Robin Hood's inquiry form.
+// then send the family on to Robin Hood's website.
 export default function RobinHoodSignup({
   className = "btn",
   children,
@@ -66,7 +66,7 @@ function LeadForm({ enquiry }: { enquiry: boolean }) {
   }, [state.status, pathname, enquiry]);
 
   useEffect(() => {
-    if (!enquiry && state.status === "success" && left <= 0) window.location.assign(RH_URLS.inquiry);
+    if (!enquiry && state.status === "success" && left <= 0) window.location.assign(RH_URLS.website);
   }, [left, state.status, enquiry]);
 
   if (state.status === "success" && enquiry) {
@@ -88,10 +88,10 @@ function LeadForm({ enquiry }: { enquiry: boolean }) {
           Thanks{state.name ? `, ${state.name.split(" ")[0]}` : ""}!
         </h2>
         <p className="text">
-          Coach Mahi now has your details. Next, complete Robin Hood Camp&apos;s inquiry form.{" "}
-          <strong>Please use the same name and email</strong> so we can follow up with you.
+          Coach Mahi now has your details and will be in touch. Meanwhile, explore Robin Hood Camp&apos;s website.{" "}
+          If you enquire with them directly, <strong>please use the same name and email</strong> so we can follow up with you.
         </p>
-        <a className="btn rh-dialog__go" href={RH_URLS.inquiry}>
+        <a className="btn rh-dialog__go" href={RH_URLS.website}>
           Continue to Robin Hood ({Math.max(left, 0)})
         </a>
       </div>
@@ -115,7 +115,7 @@ function LeadForm({ enquiry }: { enquiry: boolean }) {
       <p className="text rh-dialog__lead">
         {enquiry
           ? "Leave your details and Coach Mahi will get back to you."
-          : "Leave your details for Coach Mahi, then we’ll take you to Robin Hood Camp’s inquiry form."}
+          : "Leave your details for Coach Mahi, then we’ll take you to the Robin Hood Camp website."}
       </p>
       <form className="form" action={action}>
         <input type="hidden" name="page" value={pathname} />

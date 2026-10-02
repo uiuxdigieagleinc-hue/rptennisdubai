@@ -32,6 +32,7 @@ export const nav: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us/" },
   { label: "Grounds", href: "/grounds/" },
+  { label: "Robin Hood Camp", href: "/robin-hood-camp/" },
   {
     label: "Programs",
     href: "/programs/",
@@ -39,7 +40,6 @@ export const nav: NavItem[] = [
       { label: "1 on 1 Coaching", href: "/programs/#private" },
       { label: "Semi Private", href: "/programs/#semi-private" },
       { label: "Group Training", href: "/programs/#group" },
-      { label: "Robin Hood Camp", href: "/robin-hood-camp/" },
     ],
   },
   {
@@ -49,9 +49,9 @@ export const nav: NavItem[] = [
       { label: "Gallery", href: "/gallery/" },
       { label: "Reviews", href: "/reviews/" },
       { label: "Blog", href: "/blog/" },
+      { label: "Contact us", href: "/contact-us/" },
     ],
   },
-  { label: "Contact us", href: "/contact-us/" },
 ];
 
 export const locations = [

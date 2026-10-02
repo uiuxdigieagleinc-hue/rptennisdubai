@@ -1,9 +1,9 @@
 "use client";
 
-// Robin Hood's inquiry form. We don't add any parameters — referrals are tracked on our side
+// Robin Hood's website (families go here after leaving their details with us). We don't add any parameters — referrals are tracked on our side
 // (see RobinHoodSignup) — but form events still go to GA4 if it's installed.
 export const RH_URLS = {
-  inquiry: "https://robinhoodmaine.campintouch.com/V2/family/inquiryForm.aspx",
+  website: "https://www.robinhoodcamp.com/",
 };
 
 type Win = Window & { dataLayer?: unknown[]; gtag?: (...a: unknown[]) => void };

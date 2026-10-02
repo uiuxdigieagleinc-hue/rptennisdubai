@@ -44,9 +44,9 @@ A new blog post only needs a new entry in `content/posts.ts`. The page, sitemap 
 
 ## Robin Hood Camp
 
-A minimal section (`components/sections/RobinHoodCamp.tsx`) on the Home page after Programs and at `/robin-hood-camp/`, plus a line above the header, in the hero and in the footer. 
+A section on the Home page after Programs (`components/sections/RobinHoodCamp.tsx`: intro + activities preview) and a full detail page at `/robin-hood-camp/` (activities, academies, camp life, 2027 weeks, gallery, FAQ). All text is in `content/robinHood.ts`; camp photos are `robinHoodGallery` in `content/images.ts` (also shown on `/gallery/`). Plus a line in the hero and in the footer.
 
-**Referral tracking (our side only, nothing changes at Robin Hood):** "Request camp info" opens a short form (`components/RobinHoodSignup.tsx`) for name, email and phone. On submit, `app/actions/robinHood.ts` emails the lead to `CONTACT_TO` with the subject "Robin Hood Camp referral: <name>". That inbox is the referral record. The family is then sent to Robin Hood's inquiry form and asked to use the same name and email there, so enrollments can be matched to our list later. If email isn't configured, the family still continues but the lead is only in the server logs, so set `RESEND_API_KEY` before launch. GA4 events (when `NEXT_PUBLIC_GA_ID` is set): `robinhood_form_open`, `robinhood_lead`.
+**Referral tracking (our side only, nothing changes at Robin Hood):** "Request camp info" opens a short form (`components/RobinHoodSignup.tsx`) for name, email and phone. On submit, `app/actions/robinHood.ts` emails the lead to `CONTACT_TO` with the subject "Robin Hood Camp referral: <name>". That inbox is the referral record. The family is then sent to Robin Hood's website (robinhoodcamp.com) and asked to use the same name and email if they enquire there, so enrollments can be matched to our list later. If email isn't configured, the family still continues but the lead is only in the server logs, so set `RESEND_API_KEY` before launch. GA4 events (when `NEXT_PUBLIC_GA_ID` is set): `robinhood_form_open`, `robinhood_lead`.
 
 ## Structure
 
