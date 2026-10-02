@@ -17,7 +17,7 @@ export default function RobinHoodCamp({ variant = "home" }: { variant?: "home" |
             Robin Hood Camp · Maine, USA · Summer 2027
           </p>
           <Title id="rh-title" className="h2 rh__title" data-reveal>
-            Tennis with Coach Mahendra. And 35+ other activities.
+            Tennis with Coach Mahendra and 35+ other activities.
           </Title>
         </div>
 
