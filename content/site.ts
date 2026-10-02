@@ -7,7 +7,7 @@ export const site = {
   legalName: "Rally Point Tennis Academy",
   tagline: "Rally Point Tennis Dubai",
   description:
-    "Rally Point Tennis Academy Dubai — world-class tennis coaching for kids and adults by Coach Mahi. 1-on-1, semi-private and group sessions. Free 45-minute trial.",
+    "Rally Point Tennis Academy Dubai — world-class tennis coaching for kids and adults by Coach Mahendra. 1-on-1, semi-private and group sessions. Free 45-minute trial.",
   email: "rallypointtennisacademy@gmail.com",
   phoneDisplay: "+971 56 859 7401",
   phoneE164: "+971568597401",

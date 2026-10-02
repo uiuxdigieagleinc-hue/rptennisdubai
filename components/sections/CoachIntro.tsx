@@ -12,13 +12,13 @@ export default function CoachIntro() {
             Meet your coach
           </p>
           <h2 id="coach-title" className="h2" data-reveal>
-            Hi, I’m Mahi
+            Hi, I’m Mahendra
           </h2>
         </div>
         <Image
           className="coach__portrait"
           src={img.coachPortrait}
-          alt="Coach Mahendra “Mahi” Marvadi"
+          alt="Coach Mahendra Marvadi"
           sizes="(max-width: 992px) 100vw, 540px"
           placeholder="blur"
           data-reveal
@@ -28,7 +28,7 @@ export default function CoachIntro() {
         <Image
           className="coach__court"
           src={img.coachCourt}
-          alt="Coach Mahi coaching on court in Dubai"
+          alt="Coach Mahendra coaching on court in Dubai"
           sizes="(max-width: 992px) 100vw, 660px"
           placeholder="blur"
           data-reveal

@@ -17,17 +17,17 @@ export default function RobinHoodCamp({ variant = "home" }: { variant?: "home" |
             Robin Hood Camp · Maine, USA · Summer 2027
           </p>
           <Title id="rh-title" className="h2 rh__title" data-reveal>
-            Tennis with Coach Mahi. And 35+ other activities.
+            Tennis with Coach Mahendra. And 35+ other activities.
           </Title>
         </div>
 
         <div className="rh__row">
           <div className="rh__media" data-reveal>
-            {/* Swap for an approved photo of Coach Mahi at Robin Hood */}
+            {/* Swap for an approved photo of Coach Mahendra at Robin Hood */}
             <Image
               className="rh__photo"
               src={img.coachPortrait}
-              alt="Coach Mahi Marvadi, Tennis Director at Robin Hood Camp"
+              alt="Coach Mahendra Marvadi, Tennis Director at Robin Hood Camp"
               sizes="(max-width: 767px) 100vw, 560px"
               placeholder="blur"
               priority={variant === "page"}
@@ -38,11 +38,11 @@ export default function RobinHoodCamp({ variant = "home" }: { variant?: "home" |
           <div className="rh__body">
             <div className="text rh__intro" data-reveal>
               <p>
-                Our founder Mahendra “Mahi” Marvadi is Tennis Director at Robin Hood Camp, a traditional co-ed overnight
+                Our founder Mahendra Marvadi is Tennis Director at Robin Hood Camp, a traditional co-ed overnight
                 camp in Brooksville, Maine, and the only camp in the world on both a freshwater lake and the ocean.
               </p>
               <p>
-                It isn&apos;t only a tennis camp. While your tennis player trains with Coach Mahi, brothers and sisters can
+                It isn&apos;t only a tennis camp. While your tennis player trains with Coach Mahendra, brothers and sisters can
                 sail, ride, climb, act or play soccer, choosing their own activities every day.
               </p>
             </div>

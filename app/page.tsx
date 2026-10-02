@@ -15,9 +15,9 @@ import { reviews } from "@/content/reviews";
 import { stats, whatsapp } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "RP Tennis Dubai | Rally Point Tennis Academy — Tennis Coaching by Coach Mahi" },
+  title: { absolute: "RP Tennis Dubai | Rally Point Tennis Academy — Tennis Coaching by Coach Mahendra" },
   description:
-    "World-class tennis coaching in Dubai for beginners to competitive players. 1-on-1, semi-private and group sessions with Coach Mahi — 22+ years experience, AITA & USPTR certified. Book a free 45-min trial.",
+    "World-class tennis coaching in Dubai for beginners to competitive players. 1-on-1, semi-private and group sessions with Coach Mahendra — 22+ years experience, AITA & USPTR certified. Book a free 45-min trial.",
   alternates: { canonical: "/" },
 };
 
@@ -31,7 +31,7 @@ export default function HomePage() {
         <div className="wrap hero__row">
           <div className="hero__content anim-fade-in-up">
             <Link className="hero__rh" href="/robin-hood-camp/">
-              Coach Mahi × Robin Hood Camp, USA →
+              Coach Mahendra × Robin Hood Camp, USA →
             </Link>
             <h1 className="h-display hero__title">Serve Big. Rally Point Tennis Dubai.</h1>
             <p className="hero__text">
@@ -62,7 +62,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className="stats__video" data-reveal>
-          <AutoplayVideo src="/video/coach-mahi.mp4" label="Coach Mahi training players in Dubai" />
+          <AutoplayVideo src="/video/coach-mahi.mp4" label="Coach Mahendra training players in Dubai" />
         </div>
         <div className="stats__col">
           <div data-reveal>
@@ -77,7 +77,7 @@ export default function HomePage() {
       {/* About */}
       <section className="split wrap split--home-about" aria-labelledby="home-about">
         <div className="split__media" data-reveal>
-          <Image src={img.coachAbout} alt="Coach Mahi at Rally Point Tennis Academy" sizes="(max-width: 767px) 100vw, 600px" placeholder="blur" />
+          <Image src={img.coachAbout} alt="Coach Mahendra at Rally Point Tennis Academy" sizes="(max-width: 767px) 100vw, 600px" placeholder="blur" />
         </div>
         <div className="split__body">
           <p className="eyebrow" data-reveal>

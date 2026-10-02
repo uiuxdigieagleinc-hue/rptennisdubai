@@ -7,7 +7,7 @@ import { SITE_URL, site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Reviews",
-  description: "What players and parents say about tennis coaching with Coach Mahi at Rally Point Tennis Academy, Dubai.",
+  description: "What players and parents say about tennis coaching with Coach Mahendra at Rally Point Tennis Academy, Dubai.",
   alternates: { canonical: "/reviews/" },
 };
 

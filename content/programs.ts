@@ -8,7 +8,7 @@ export const programs = [
     // the Home page calls it "Partner Training". Kept as on the live site.
     image: img.programPrivate,
     text: "Personalized one-on-one coaching to fast-track your progress with every session.",
-    points: ["100% personalized", "Fastest improvement", "Custom plan by Mahi"],
+    points: ["100% personalized", "Fastest improvement", "Custom plan by Mahendra"],
   },
   {
     id: "semi-private",
@@ -31,11 +31,11 @@ export const programs = [
 export const faqs = [
   {
     q: "Is coaching suitable for complete beginners?",
-    a: "Absolutely. Coach Mahi has taken complete beginners to intermediate-advanced level in as little as 10 days. We welcome players of all levels — the program is always tailored to where you are now.",
+    a: "Absolutely. Coach Mahendra has taken complete beginners to intermediate-advanced level in as little as 10 days. We welcome players of all levels — the program is always tailored to where you are now.",
   },
   {
     q: "Are there programs for children?",
-    a: "Yes — Coach Mahi coaches kids and adults. Junior students (any age) are welcome in group and private sessions. Many of our students are children whose parents have seen tremendous improvement.",
+    a: "Yes — Coach Mahendra coaches kids and adults. Junior students (any age) are welcome in group and private sessions. Many of our students are children whose parents have seen tremendous improvement.",
   },
   {
     q: "How do I book a session?",

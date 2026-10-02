@@ -12,7 +12,7 @@ import { stats } from "@/content/site";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Rally Point Tennis Academy was founded by Mahendra “Mahi” Marvadi — USPTR certified, AITA Level 3, with 22+ years of coaching in Dubai and the USA.",
+    "Rally Point Tennis Academy was founded by Mahendra Marvadi — USPTR certified, AITA Level 3, with 22+ years of coaching in Dubai and the USA.",
   alternates: { canonical: "/about-us/" },
 };
 
@@ -23,7 +23,7 @@ export default function AboutPage() {
 
       <section className="split wrap split--about" aria-labelledby="our-story">
         <div className="split__media" data-reveal>
-          <Image src={img.coachAbout} alt="Coach Mahi at Rally Point Tennis Academy" sizes="(max-width: 992px) 100vw, 600px" placeholder="blur" />
+          <Image src={img.coachAbout} alt="Coach Mahendra at Rally Point Tennis Academy" sizes="(max-width: 992px) 100vw, 600px" placeholder="blur" />
         </div>
         <div className="split__body">
           <p className="eyebrow" data-reveal>
@@ -34,7 +34,7 @@ export default function AboutPage() {
           </h2>
           <div className="text split__text" data-reveal>
             <p>
-              Rally Point Tennis Academy was founded by Mahendra “Mahi” Marvadi — a USPTR Certified, AITA Level 3 professional
+              Rally Point Tennis Academy was founded by Mahendra Marvadi — a USPTR Certified, AITA Level 3 professional
               with 22+ years of coaching experience across Dubai and the United States.
             </p>
             <p>

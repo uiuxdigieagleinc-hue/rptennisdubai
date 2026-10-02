@@ -75,7 +75,7 @@ function LeadForm({ enquiry }: { enquiry: boolean }) {
         <h2 id="rh-dialog-title" className="rh-dialog__title">
           Thanks{state.name ? `, ${state.name.split(" ")[0]}` : ""}!
         </h2>
-        <p className="text">Coach Mahi has your details and will get back to you shortly about Robin Hood Camp.</p>
+        <p className="text">Coach Mahendra has your details and will get back to you shortly about Robin Hood Camp.</p>
       </div>
     );
   }
@@ -88,7 +88,7 @@ function LeadForm({ enquiry }: { enquiry: boolean }) {
           Thanks{state.name ? `, ${state.name.split(" ")[0]}` : ""}!
         </h2>
         <p className="text">
-          Coach Mahi now has your details and will be in touch. Meanwhile, explore Robin Hood Camp&apos;s website.{" "}
+          Coach Mahendra now has your details and will be in touch. Meanwhile, explore Robin Hood Camp&apos;s website.{" "}
           If you enquire with them directly, <strong>please use the same name and email</strong> so we can follow up with you.
         </p>
         <a className="btn rh-dialog__go" href={RH_URLS.website}>
@@ -114,8 +114,8 @@ function LeadForm({ enquiry }: { enquiry: boolean }) {
       </h2>
       <p className="text rh-dialog__lead">
         {enquiry
-          ? "Leave your details and Coach Mahi will get back to you."
-          : "Leave your details for Coach Mahi, then we’ll take you to the Robin Hood Camp website."}
+          ? "Leave your details and Coach Mahendra will get back to you."
+          : "Leave your details for Coach Mahendra, then we’ll take you to the Robin Hood Camp website."}
       </p>
       <form className="form" action={action}>
         <input type="hidden" name="page" value={pathname} />

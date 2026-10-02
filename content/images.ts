@@ -52,22 +52,22 @@ export const heroSlides = [hero1, hero2, hero3];
 // Robin Hood section mosaic (first image is the large one).
 // Placeholders from our own shoots — swap for approved Robin Hood Camp photos when they arrive.
 export const robinHoodGallery = [
-  { src: coachGroup, alt: "Coach Mahi with his players" },
+  { src: coachGroup, alt: "Coach Mahendra with his players" },
   { src: court1, alt: "Players training on court" },
   { src: mg0230, alt: "Junior player hitting a forehand" },
-  { src: coachCourt, alt: "Coach Mahi giving one-on-one feedback" },
+  { src: coachCourt, alt: "Coach Mahendra giving one-on-one feedback" },
   { src: mg0066, alt: "Group drill on court" },
 ];
 
 // Same order as the live gallery page
 export const gallery = [
-  { src: coachGroup, alt: "Coach Mahi with students on court" },
+  { src: coachGroup, alt: "Coach Mahendra with students on court" },
   { src: postDubai, alt: "Tennis coaching session in Dubai" },
-  { src: coachAbout, alt: "Coach Mahi at Rally Point Tennis Academy" },
+  { src: coachAbout, alt: "Coach Mahendra at Rally Point Tennis Academy" },
   { src: court1, alt: "Players training at Rally Point Tennis" },
-  { src: coachPortrait, alt: "Coach Mahi Marvadi on court" },
+  { src: coachPortrait, alt: "Coach Mahendra Marvadi on court" },
   { src: hero1, alt: "Tennis training in Dubai" },
-  { src: coachCourt, alt: "Coach Mahi coaching a player" },
+  { src: coachCourt, alt: "Coach Mahendra coaching a player" },
   { src: ctaBg, alt: "Group tennis session" },
   { src: postPrivate, alt: "Private tennis coaching" },
   { src: court2, alt: "Junior players at Rally Point Tennis" },

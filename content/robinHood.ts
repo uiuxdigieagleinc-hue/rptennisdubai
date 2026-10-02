@@ -86,7 +86,7 @@ export const rhActivities = [
 ];
 
 export const rhAcademies = [
-  { name: "Tennis", text: "Led by Coach Mahi as Tennis Director, on six plexi-pave courts with four pro coaches.", coach: true },
+  { name: "Tennis", text: "Led by Coach Mahendra as Tennis Director, on six plexi-pave courts with four pro coaches.", coach: true },
   { name: "Golf", text: "PGA professional instruction, a full driving range and rounds at local country clubs." },
   { name: "Squash", text: "Two outdoor courts and two professional coaches." },
   { name: "Soccer", text: "Intensive weeks with personal coaching and fitness training." },
@@ -160,6 +160,6 @@ export const rhFaqs = [
   },
   {
     q: "How do we enrol?",
-    a: "Tap “Request camp info”, leave your details, and Coach Mahi will get in touch to help with enrolment. We'll also take you to Robin Hood's website to explore the camp.",
+    a: "Tap “Request camp info”, leave your details, and Coach Mahendra will get in touch to help with enrolment. We'll also take you to Robin Hood's website to explore the camp.",
   },
 ];

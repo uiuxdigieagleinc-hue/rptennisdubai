@@ -17,7 +17,7 @@ export default function Footer() {
               <Image src={img.logo} alt="RP Tennis" width={100} height={100} />
             </Link>
             <p className="site-footer__rh">
-              Coach Mahi is Tennis Director at Robin Hood Camp, Maine, USA.{" "}
+              Coach Mahendra is Tennis Director at Robin Hood Camp, Maine, USA.{" "}
               <Link href="/robin-hood-camp/">Summer 2027 →</Link>
             </p>
           </div>

@@ -8,9 +8,9 @@ import { robinHoodGallery } from "@/content/images";
 import { rhAcademies, rhCampLife, rhDay, rhFaqs, rhTennisAcademy, rhWeeks } from "@/content/robinHood";
 
 export const metadata: Metadata = {
-  title: "Robin Hood Camp — Summer 2027 with Coach Mahi",
+  title: "Robin Hood Camp — Summer 2027 with Coach Mahendra",
   description:
-    "Robin Hood Camp in Maine, USA: Tennis Academy with Coach Mahi plus 35+ daily activities for the whole family, from sailing and riding to drama and trips. Summer 2027 dates, camp life and FAQ.",
+    "Robin Hood Camp in Maine, USA: Tennis Academy with Coach Mahendra plus 35+ daily activities for the whole family, from sailing and riding to drama and trips. Summer 2027 dates, camp life and FAQ.",
   alternates: { canonical: "/robin-hood-camp/" },
 };
 
@@ -66,7 +66,7 @@ export default function RobinHoodCampPage() {
               <span className="rh__value">{a.name}</span>
               <span className="rh__label">
                 {a.text}
-                {a.coach && <span className="rh-pill">Coach Mahi</span>}
+                {a.coach && <span className="rh-pill">Coach Mahendra</span>}
               </span>
             </li>
           ))}
@@ -84,7 +84,7 @@ export default function RobinHoodCampPage() {
               The Robin Hood Tennis Academy
             </h2>
             <p className="text rh-sec__text">
-              A week-long intensive inside camp. Campers train on six plexi-pave courts with Coach Mahi&apos;s team, mixing
+              A week-long intensive inside camp. Campers train on six plexi-pave courts with Coach Mahendra&apos;s team, mixing
               small-group drills, match play and fitness. They can book more than one Academy week.
             </p>
           </div>
@@ -215,7 +215,7 @@ export default function RobinHoodCampPage() {
           <div className="rh__actions" data-reveal>
             <RobinHoodSignup>Request camp info</RobinHoodSignup>
             <RobinHoodSignup enquiry className="btn btn--white">
-              Ask Coach Mahi
+              Ask Coach Mahendra
             </RobinHoodSignup>
           </div>
         </div>

@@ -27,7 +27,7 @@ const workSans = Work_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "RP Tennis Dubai | Rally Point Tennis Academy — Coach Mahi",
+    default: "RP Tennis Dubai | Rally Point Tennis Academy — Coach Mahendra",
     template: "%s | RP Tennis Dubai",
   },
   description: site.description,
@@ -62,7 +62,7 @@ const jsonLd = {
   email: site.email,
   telephone: site.phoneE164,
   description: site.description,
-  founder: { "@type": "Person", name: "Mahendra “Mahi” Marvadi" },
+  founder: { "@type": "Person", name: "Mahendra Marvadi" },
   areaServed: "Dubai",
   address: { "@type": "PostalAddress", addressLocality: "Dubai", addressCountry: "AE" },
   location: locations.map((l) => ({
@@ -86,7 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         <div className="topline">
           <div className="wrap topline__inner">
-            <span>Summer 2027: train with Coach Mahi at Robin Hood Camp, Maine, USA</span>
+            <span>Summer 2027: train with Coach Mahendra at Robin Hood Camp, Maine, USA</span>
             <Link href="/robin-hood-camp/">Learn more →</Link>
           </div>
         </div>
