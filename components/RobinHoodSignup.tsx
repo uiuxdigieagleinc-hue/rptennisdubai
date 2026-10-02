@@ -9,8 +9,8 @@ import { RH_URLS, trackEvent } from "./RobinHoodLink";
 const initial: RobinHoodLeadState = { status: "idle" };
 const REDIRECT_SECONDS = 6;
 
-// "Request camp info": collect name / email / phone on our site (our referral record),
-// then send the family on to Robin Hood's website.
+// "Submit a Robin Hood Camp inquiry": collect name / email / phone on our site (our referral record),
+// then send the family on to Robin Hood's inquiry form.
 export default function RobinHoodSignup({
   className = "btn",
   children,
@@ -66,7 +66,7 @@ function LeadForm({ enquiry }: { enquiry: boolean }) {
   }, [state.status, pathname, enquiry]);
 
   useEffect(() => {
-    if (!enquiry && state.status === "success" && left <= 0) window.location.assign(RH_URLS.website);
+    if (!enquiry && state.status === "success" && left <= 0) window.location.assign(RH_URLS.inquiry);
   }, [left, state.status, enquiry]);
 
   if (state.status === "success" && enquiry) {
@@ -88,11 +88,11 @@ function LeadForm({ enquiry }: { enquiry: boolean }) {
           Thanks{state.name ? `, ${state.name.split(" ")[0]}` : ""}!
         </h2>
         <p className="text">
-          Coach Mahendra now has your details and will be in touch. Meanwhile, explore Robin Hood Camp&apos;s website.{" "}
-          If you enquire with them directly, <strong>please use the same name and email</strong> so we can follow up with you.
+          Coach Mahendra now has your details. Next, complete Robin Hood Camp&apos;s inquiry form.{" "}
+          <strong>Please use the same name and email</strong> so we can follow up with you.
         </p>
-        <a className="btn rh-dialog__go" href={RH_URLS.website}>
-          Continue to Robin Hood ({Math.max(left, 0)})
+        <a className="btn rh-dialog__go" href={RH_URLS.inquiry}>
+          Continue to the inquiry form ({Math.max(left, 0)})
         </a>
       </div>
     );
@@ -110,12 +110,12 @@ function LeadForm({ enquiry }: { enquiry: boolean }) {
     <>
       {!enquiry && <p className="eyebrow">Step 1 of 2</p>}
       <h2 id="rh-dialog-title" className="rh-dialog__title">
-        {enquiry ? "Enquire about Robin Hood Camp" : "Request Robin Hood Camp info"}
+        {enquiry ? "Enquire about Robin Hood Camp" : "Submit a Robin Hood Camp inquiry"}
       </h2>
       <p className="text rh-dialog__lead">
         {enquiry
           ? "Leave your details and Coach Mahendra will get back to you."
-          : "Leave your details for Coach Mahendra, then we’ll take you to the Robin Hood Camp website."}
+          : "Leave your details for Coach Mahendra, then we’ll take you to Robin Hood Camp’s inquiry form."}
       </p>
       <form className="form" action={action}>
         <input type="hidden" name="page" value={pathname} />
@@ -167,7 +167,7 @@ function LeadForm({ enquiry }: { enquiry: boolean }) {
           </p>
         )}
         <button className="btn form__submit" type="submit" disabled={pending}>
-          {pending ? "Sending…" : enquiry ? "Send enquiry" : "Continue to Robin Hood"}
+          {pending ? "Sending…" : enquiry ? "Send enquiry" : "Continue to the inquiry form"}
         </button>
       </form>
     </>

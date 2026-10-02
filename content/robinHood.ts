@@ -160,6 +160,6 @@ export const rhFaqs = [
   },
   {
     q: "How do we enrol?",
-    a: "Tap “Request camp info”, leave your details, and Coach Mahendra will get in touch to help with enrolment. We'll also take you to Robin Hood's website to explore the camp.",
+    a: "Tap “Submit a Robin Hood Camp inquiry” and leave your details for Coach Mahendra. We'll then take you to Robin Hood's inquiry form, and Coach Mahendra will follow up to help with enrolment.",
   },
 ];

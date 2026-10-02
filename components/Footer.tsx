@@ -3,6 +3,8 @@ import Link from "next/link";
 import { locations, nav, site } from "@/content/site";
 import { img } from "@/content/images";
 import { FacebookIcon, InstagramIcon } from "./Icons";
+import { DiscoverRobinHood } from "./RobinHoodLink";
+import RobinHoodSignup from "./RobinHoodSignup";
 
 // The live footer shows a dead "Other" item; here its children are listed instead.
 const links = nav.flatMap((i) => (i.href === "#" && i.children ? i.children : [i]));
@@ -20,6 +22,10 @@ export default function Footer() {
               Coach Mahendra is Tennis Director at Robin Hood Camp, Maine, USA.{" "}
               <Link href="/robin-hood-camp/">Summer 2027 →</Link>
             </p>
+            <div className="site-footer__rh-btns">
+              <DiscoverRobinHood className="btn" />
+              <RobinHoodSignup className="btn btn--outline-light">Submit a Robin Hood Camp inquiry</RobinHoodSignup>
+            </div>
           </div>
 
           <div className="site-footer__cols">

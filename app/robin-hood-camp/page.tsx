@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import GalleryGrid from "@/components/GalleryGrid";
 import { MinusIcon, PlusIcon } from "@/components/Icons";
 import RobinHoodActivities from "@/components/RobinHoodActivities";
+import { DiscoverRobinHood } from "@/components/RobinHoodLink";
 import RobinHoodSignup from "@/components/RobinHoodSignup";
 import RobinHoodCamp from "@/components/sections/RobinHoodCamp";
 import { robinHoodGallery } from "@/content/images";
@@ -213,10 +214,8 @@ export default function RobinHoodCampPage() {
             </h2>
           </div>
           <div className="rh__actions" data-reveal>
-            <RobinHoodSignup>Request camp info</RobinHoodSignup>
-            <RobinHoodSignup enquiry className="btn btn--white">
-              Ask Coach Mahendra
-            </RobinHoodSignup>
+            <DiscoverRobinHood />
+            <RobinHoodSignup className="btn btn--white">Submit a Robin Hood Camp inquiry</RobinHoodSignup>
           </div>
         </div>
       </section>

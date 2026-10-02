@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PlayIcon } from "@/components/Icons";
 import RobinHoodActivities from "@/components/RobinHoodActivities";
+import { DiscoverRobinHood } from "@/components/RobinHoodLink";
 import RobinHoodSignup from "@/components/RobinHoodSignup";
 import { img } from "@/content/images";
 import { rhFacts } from "@/content/robinHood";
@@ -32,7 +34,16 @@ export default function RobinHoodCamp({ variant = "home" }: { variant?: "home" |
               placeholder="blur"
               priority={variant === "page"}
             />
-            <span className="rh__tag">Tennis Director · Robin Hood Camp</span>
+            {variant === "home" ? (
+              // NOTE: this photo will be replaced by the "Tennis at Robin Hood Camp" video (the tennis part of
+              // Robin Hood's new camp video, being made by Sinoee, due end of October 2026). Swap the <Image> for the video then.
+              <span className="rh__tag rh__tag--video">
+                <PlayIcon />
+                Tennis at Robin Hood Camp · Video coming soon
+              </span>
+            ) : (
+              <span className="rh__tag">Tennis Director · Robin Hood Camp</span>
+            )}
           </div>
 
           <div className="rh__body">
@@ -57,15 +68,12 @@ export default function RobinHoodCamp({ variant = "home" }: { variant?: "home" |
             </ul>
 
             <div className="rh__actions" data-reveal>
-              <RobinHoodSignup>Request camp info</RobinHoodSignup>
-              {variant === "home" ? (
-                <Link href="/robin-hood-camp/" className="btn btn--outline">
+              <DiscoverRobinHood />
+              <RobinHoodSignup className="btn btn--outline">Submit a Robin Hood Camp inquiry</RobinHoodSignup>
+              {variant === "home" && (
+                <Link href="/robin-hood-camp/" className="rh__link">
                   Explore the camp
                 </Link>
-              ) : (
-                <RobinHoodSignup enquiry className="btn btn--outline">
-                  Enquire now
-                </RobinHoodSignup>
               )}
             </div>
           </div>
