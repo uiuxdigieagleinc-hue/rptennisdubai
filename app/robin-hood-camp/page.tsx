@@ -214,7 +214,7 @@ export default function RobinHoodCampPage() {
             </h2>
           </div>
           <div className="rh__actions" data-reveal>
-            <DiscoverRobinHood />
+            <DiscoverRobinHood className="btn" />
             <RobinHoodSignup className="btn btn--white">Submit a Robin Hood Camp inquiry</RobinHoodSignup>
           </div>
         </div>

@@ -1583,11 +1583,17 @@
   font-weight: 500;
   color: var(--text);
 }
+/* two equal buttons side by side */
 .rh__actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 16px 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.rh__actions .btn {
+  min-height: 56px;
+  padding: 12px 16px;
+  white-space: normal;
+  text-align: center;
 }
 .rh__link {
   font-family: var(--font-head);
@@ -2146,6 +2152,11 @@
   }
   .btn--lg {
     font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .rh__actions {
+    grid-template-columns: 1fr;
   }
 }
 

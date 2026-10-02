@@ -68,13 +68,8 @@ export default function RobinHoodCamp({ variant = "home" }: { variant?: "home" |
             </ul>
 
             <div className="rh__actions" data-reveal>
-              <DiscoverRobinHood />
+              <DiscoverRobinHood className="btn" />
               <RobinHoodSignup className="btn btn--outline">Submit a Robin Hood Camp inquiry</RobinHoodSignup>
-              {variant === "home" && (
-                <Link href="/robin-hood-camp/" className="rh__link">
-                  Explore the camp
-                </Link>
-              )}
             </div>
           </div>
         </div>
