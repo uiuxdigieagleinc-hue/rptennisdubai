@@ -1829,8 +1829,7 @@
 .rh-sec__text {
   margin: 0;
 }
-.rh-acad .rh__value,
-.rh-weeks .rh__value {
+.rh-acad .rh__value {
   flex-basis: 260px;
 }
 .rh-pill {
@@ -1845,28 +1844,6 @@
   line-height: 1.2;
   vertical-align: middle;
   white-space: nowrap;
-}
-.rh-pill--outline {
-  background: transparent;
-  box-shadow: inset 0 0 0 1px var(--ink);
-}
-.rh-weeks__dates {
-  flex: 1 1 auto;
-}
-.rh-weeks__tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px;
-}
-.rh-weeks__tags .rh-pill {
-  margin-left: 0;
-}
-.rh-note {
-  margin: 0;
-  padding: 16px 0 0;
-  font-size: 14px;
-  color: var(--muted);
 }
 .rh-life {
   padding-block: 110px;
@@ -1957,8 +1934,7 @@
   .rh-day {
     grid-template-columns: repeat(2, 1fr);
   }
-  .rh-acad .rh__value,
-  .rh-weeks .rh__value {
+  .rh-acad .rh__value {
     flex-basis: 170px;
   }
   .rh-cta__row {
@@ -1996,28 +1972,16 @@
   .rh-cta {
     padding-block: 70px;
   }
-  .rh-acad .rh__fact,
-  .rh-weeks .rh__fact {
+  .rh-acad .rh__fact {
     flex-wrap: wrap;
     gap: 6px 14px;
   }
-  .rh-acad .rh__value,
-  .rh-weeks .rh__value {
+  .rh-acad .rh__value {
     flex-basis: 100%;
-  }
-  .rh-weeks .rh__value {
-    flex-basis: auto;
-  }
-  .rh-weeks__tags {
-    flex-basis: 100%;
-    justify-content: flex-start;
   }
   .rh-pill {
     margin-left: 0;
     margin-top: 8px;
-  }
-  .rh-weeks__tags .rh-pill {
-    margin-top: 0;
   }
 }
 

@@ -3,7 +3,7 @@
 export const rhFacts = [
   { value: "35+", label: "Activities every day — tennis is just one of them" },
   { value: "6", label: "Specialist academies: tennis, golf, squash, soccer, riding and watersports" },
-  { value: "2–7 wks", label: "Flexible sessions, 27 June – 15 August 2027" },
+  { value: "2–7 wks", label: "Flexible sessions, 27 June – 15 August" },
   { value: "25+", label: "Countries campers come from" },
 ];
 
@@ -126,17 +126,6 @@ export const rhCampLife = [
   "Two generations of the Littlefield family, 99 years of camp tradition",
 ];
 
-// 2027 weeks. Academy weeks are tentative until Robin Hood confirms (HANDOFF.md Q11).
-export const rhWeeks = [
-  { week: "Week 1", dates: "27 June – 3 July", tennis: true },
-  { week: "Week 2", dates: "4 – 10 July", tennis: true, soccer: true },
-  { week: "Week 3", dates: "11 – 17 July", tennis: true },
-  { week: "Week 4", dates: "18 – 24 July", tennis: true },
-  { week: "Week 5", dates: "25 – 31 July" },
-  { week: "Week 6", dates: "1 – 7 August", tennis: true, soccer: true },
-  { week: "Week 7", dates: "8 – 15 August" },
-];
-
 export const rhFaqs = [
   {
     q: "My other children don't play tennis. Can they still come?",
@@ -148,7 +137,7 @@ export const rhFaqs = [
   },
   {
     q: "How long can my child stay?",
-    a: "Camp runs in one-week blocks from 27 June to 15 August 2027. Weeks are combined into sessions of 2 to 7 weeks; two-week sessions need approval from Robin Hood.",
+    a: "Camp runs in one-week blocks from 27 June to 15 August. Weeks are combined into sessions of 2 to 7 weeks; two-week sessions need approval from Robin Hood.",
   },
   {
     q: "Do they need to be strong swimmers?",

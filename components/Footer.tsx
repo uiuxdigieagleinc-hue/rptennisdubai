@@ -20,7 +20,7 @@ export default function Footer() {
             </Link>
             <p className="site-footer__rh">
               Coach Mahendra is Tennis Director at Robin Hood Camp, Maine, USA.{" "}
-              <Link href="/robin-hood-camp/">Summer 2027 →</Link>
+              <Link href="/robin-hood-camp/">Summer camp →</Link>
             </p>
             <div className="site-footer__rh-btns">
               <DiscoverRobinHood className="btn" />

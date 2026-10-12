@@ -151,7 +151,7 @@ export default function Header() {
                     <Link href={item.href} className={`mnav__link${active ? " is-active" : ""}`} aria-current={current(item.href)}>
                       <span className="mnav__num">{num}</span>
                       <span className="mnav__label">{item.label}</span>
-                      {item.href === "/robin-hood-camp/" && <span className="mnav__tag">Summer 2027</span>}
+                      {item.href === "/robin-hood-camp/" && <span className="mnav__tag">Summer camp</span>}
                     </Link>
                   </li>
                 );

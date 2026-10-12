@@ -16,20 +16,19 @@ export default function RobinHoodCamp({ variant = "home" }: { variant?: "home" |
       <div className="wrap">
         <div className="rh__head">
           <p className="eyebrow rh__eyebrow" data-reveal>
-            Robin Hood Camp · Maine, USA · Summer 2027
+            Robin Hood Camp · Maine, USA
           </p>
           <Title id="rh-title" className="h2 rh__title" data-reveal>
-            Tennis with Coach Mahendra and 35+ other activities.
+            Train with Coach Mahendra at Robin Hood Camp.
           </Title>
         </div>
 
         <div className="rh__row">
           <div className="rh__media" data-reveal>
-            {/* Swap for an approved photo of Coach Mahendra at Robin Hood */}
             <Image
               className="rh__photo"
-              src={img.coachPortrait}
-              alt="Coach Mahendra Marvadi, Tennis Director at Robin Hood Camp"
+              src={img.rhCoach}
+              alt="Coach Mahendra coaching a camper at Robin Hood Camp"
               sizes="(max-width: 767px) 100vw, 560px"
               placeholder="blur"
               priority={variant === "page"}
@@ -91,7 +90,7 @@ export default function RobinHoodCamp({ variant = "home" }: { variant?: "home" |
             <RobinHoodActivities limit={4} />
             <div className="rh__more" data-reveal>
               <Link href="/robin-hood-camp/" className="rh__link">
-                See all activities, dates and the camp gallery
+                See all activities and the camp gallery
               </Link>
             </div>
           </div>
