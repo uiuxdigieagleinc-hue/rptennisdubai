@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PlayIcon } from "@/components/Icons";
 import RobinHoodActivities from "@/components/RobinHoodActivities";
 import { DiscoverRobinHood } from "@/components/RobinHoodLink";
 import RobinHoodSignup from "@/components/RobinHoodSignup";
@@ -19,7 +18,7 @@ export default function RobinHoodCamp({ variant = "home" }: { variant?: "home" |
             Robin Hood Camp · Maine, USA
           </p>
           <Title id="rh-title" className="h2 rh__title" data-reveal>
-            Train with Coach Mahendra at Robin Hood Camp.
+            Tennis training with Coach Mahendra at Robin Hood Camp.
           </Title>
         </div>
 
@@ -33,16 +32,9 @@ export default function RobinHoodCamp({ variant = "home" }: { variant?: "home" |
               placeholder="blur"
               priority={variant === "page"}
             />
-            {variant === "home" ? (
-              // NOTE: this photo will be replaced by the "Tennis at Robin Hood Camp" video (the tennis part of
-              // Robin Hood's new camp video, being made by Sinoee, due end of October 2026). Swap the <Image> for the video then.
-              <span className="rh__tag rh__tag--video">
-                <PlayIcon />
-                Tennis at Robin Hood Camp · Video coming soon
-              </span>
-            ) : (
-              <span className="rh__tag">Tennis Director · Robin Hood Camp</span>
-            )}
+            {/* NOTE: on the home page this photo will be replaced by the "Tennis at Robin Hood Camp" video (the tennis
+                part of Robin Hood's new camp video, being made by Sinoee). Swap the <Image> for the video then. */}
+            {variant === "page" && <span className="rh__tag">Tennis Director · Robin Hood Camp</span>}
           </div>
 
           <div className="rh__body">

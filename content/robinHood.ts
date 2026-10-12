@@ -3,7 +3,7 @@
 export const rhFacts = [
   { value: "35+", label: "Activities every day — tennis is just one of them" },
   { value: "6", label: "Specialist academies: tennis, golf, squash, soccer, riding and watersports" },
-  { value: "2–7 wks", label: "Flexible sessions, 27 June – 15 August" },
+  { value: "2–7 wks", label: "Flexible sessions, built from one-week blocks" },
   { value: "25+", label: "Countries campers come from" },
 ];
 
@@ -137,7 +137,7 @@ export const rhFaqs = [
   },
   {
     q: "How long can my child stay?",
-    a: "Camp runs in one-week blocks from 27 June to 15 August. Weeks are combined into sessions of 2 to 7 weeks; two-week sessions need approval from Robin Hood.",
+    a: "Camp runs in one-week blocks. Weeks are combined into sessions of 2 to 7 weeks; two-week sessions need approval from Robin Hood.",
   },
   {
     q: "Do they need to be strong swimmers?",

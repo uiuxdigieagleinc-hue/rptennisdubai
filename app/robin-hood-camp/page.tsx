@@ -12,7 +12,7 @@ import { rhAcademies, rhCampLife, rhDay, rhFaqs, rhTennisAcademy } from "@/conte
 export const metadata: Metadata = {
   title: "Robin Hood Camp — Summer Camp with Coach Mahendra",
   description:
-    "Robin Hood Camp in Maine, USA: Tennis Academy with Coach Mahendra plus 35+ daily activities for the whole family, from sailing and riding to drama and trips. Camp life, gallery and FAQ.",
+    "Robin Hood Camp in Maine, USA: Coach Mahendra leads the Tennis Academy, and the camp offers 35+ daily activities for the whole family, from sailing and riding to drama and trips. Camp life, gallery and FAQ.",
   alternates: { canonical: "/robin-hood-camp/" },
 };
 
