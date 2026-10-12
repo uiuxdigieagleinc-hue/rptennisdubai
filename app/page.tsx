@@ -31,7 +31,7 @@ export default function HomePage() {
         <div className="wrap hero__row">
           <div className="hero__content anim-fade-in-up">
             <Link className="hero__rh" href="/robin-hood-camp/">
-              Coach Mahendra × Robin Hood Camp, USA →
+              Coach Mahendra × Robin Hood Summer Camp, USA →
             </Link>
             <h1 className="h-display hero__title">Serve Big. Rally Point Tennis Dubai.</h1>
             <p className="hero__text">
@@ -120,7 +120,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Robin Hood Camp (see HANDOFF.md) */}
+      {/* Robin Hood Summer Camp (see HANDOFF.md) */}
       <RobinHoodCamp />
 
       {/* Full-width photo */}

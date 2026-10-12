@@ -19,12 +19,12 @@ export default function Footer() {
               <Image src={img.logo} alt="RP Tennis" width={100} height={100} />
             </Link>
             <p className="site-footer__rh">
-              Coach Mahendra is Tennis Director at Robin Hood Camp, Maine, USA.{" "}
-              <Link href="/robin-hood-camp/">Summer camp →</Link>
+              Coach Mahendra is Tennis Director at Robin Hood Summer Camp, Maine, USA.{" "}
+              <Link href="/robin-hood-camp/">Learn more →</Link>
             </p>
             <div className="site-footer__rh-btns">
               <DiscoverRobinHood className="btn" />
-              <RobinHoodSignup className="btn btn--outline-light">Submit a Robin Hood Camp inquiry</RobinHoodSignup>
+              <RobinHoodSignup className="btn btn--outline-light">Submit a Robin Hood Summer Camp inquiry</RobinHoodSignup>
             </div>
           </div>
 

@@ -86,7 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         <div className="topline">
           <div className="wrap topline__inner">
-            <span>Summer camp: train with Coach Mahendra at Robin Hood Camp, Maine, USA</span>
+            <span>Train with Coach Mahendra at Robin Hood Summer Camp, Maine, USA</span>
             <Link href="/robin-hood-camp/">Learn more →</Link>
           </div>
         </div>

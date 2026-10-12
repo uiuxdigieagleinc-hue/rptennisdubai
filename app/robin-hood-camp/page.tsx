@@ -10,9 +10,9 @@ import { robinHoodGallery } from "@/content/images";
 import { rhAcademies, rhCampLife, rhDay, rhFaqs, rhTennisAcademy } from "@/content/robinHood";
 
 export const metadata: Metadata = {
-  title: "Robin Hood Camp — Summer Camp with Coach Mahendra",
+  title: "Robin Hood Summer Camp with Coach Mahendra",
   description:
-    "Robin Hood Camp in Maine, USA: Coach Mahendra leads the Tennis Academy, and the camp offers 35+ daily activities for the whole family, from sailing and riding to drama and trips. Camp life, gallery and FAQ.",
+    "Robin Hood Summer Camp in Maine, USA: Coach Mahendra leads the Tennis Academy, and the camp offers 35+ daily activities for the whole family, from sailing and riding to drama and trips. Camp life, gallery and FAQ.",
   alternates: { canonical: "/robin-hood-camp/" },
 };
 
@@ -153,7 +153,7 @@ export default function RobinHoodCampPage() {
         </div>
         <div className="rh__more" data-reveal>
           <Link href="/gallery/#robin-hood-camp" className="rh__link">
-            See all Robin Hood Camp photos
+            See all Robin Hood Summer Camp photos
           </Link>
         </div>
       </section>
@@ -164,7 +164,7 @@ export default function RobinHoodCampPage() {
           Questions from parents
         </p>
         <h2 id="rh-faq-title" className="h2 h2--sm-mobile center faq__title" data-reveal>
-          Robin Hood Camp FAQ
+          Robin Hood Summer Camp FAQ
         </h2>
         <div className="faq__list">
           {rhFaqs.map((f, i) => (
@@ -184,14 +184,14 @@ export default function RobinHoodCampPage() {
       <section className="rh-cta" aria-labelledby="rh-cta-title">
         <div className="wrap rh-cta__row">
           <div data-reveal>
-            <p className="eyebrow rh-cta__eyebrow">Robin Hood Camp</p>
+            <p className="eyebrow rh-cta__eyebrow">Robin Hood Summer Camp</p>
             <h2 id="rh-cta-title" className="h2 h2--sm-mobile rh-cta__title">
               Plan a summer for the whole family
             </h2>
           </div>
           <div className="rh__actions" data-reveal>
             <DiscoverRobinHood className="btn" />
-            <RobinHoodSignup className="btn btn--white">Submit a Robin Hood Camp inquiry</RobinHoodSignup>
+            <RobinHoodSignup className="btn btn--white">Submit a Robin Hood Summer Camp inquiry</RobinHoodSignup>
           </div>
         </div>
       </section>

@@ -16,8 +16,8 @@ export function trackEvent(event: string, data: Record<string, string>) {
   if (typeof w.gtag === "function") w.gtag("event", event, data);
 }
 
-// "Discover Robin Hood Camp Maine": opens robinhoodcamp.com in a new tab and logs the click
-export function DiscoverRobinHood({ className = "btn btn--lg", children = "Discover Robin Hood Camp Maine" }: { className?: string; children?: React.ReactNode }) {
+// "Discover Robin Hood Summer Camp Maine": opens robinhoodcamp.com in a new tab and logs the click
+export function DiscoverRobinHood({ className = "btn btn--lg", children = "Discover Robin Hood Summer Camp Maine" }: { className?: string; children?: React.ReactNode }) {
   return (
     <a
       className={className}

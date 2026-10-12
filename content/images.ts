@@ -70,25 +70,25 @@ export const img = {
 
 export const heroSlides = [hero1, hero2, hero3];
 
-// Robin Hood Camp photos. The camp page mosaic shows the first 9 (first image is the large one);
+// Robin Hood Summer Camp photos. The camp page mosaic shows the first 9 (first image is the large one);
 // the gallery page shows them all.
 export const robinHoodGallery = [
-  { src: rh15, alt: "Campers and their coach at Robin Hood Camp" },
-  { src: rh19, alt: "Camper hitting a forehand at Robin Hood Camp" },
+  { src: rh15, alt: "Campers and their coach at Robin Hood Summer Camp" },
+  { src: rh19, alt: "Camper hitting a forehand at Robin Hood Summer Camp" },
   { src: rh18, alt: "Tennis Academy players lined up at the net" },
   { src: rh01, alt: "Coach guiding a young camper's forehand" },
-  { src: rh09, alt: "Player serving on the Robin Hood Camp courts" },
+  { src: rh09, alt: "Player serving on the Robin Hood Summer Camp courts" },
   { src: rh05, alt: "Campers with their rackets at the tennis courts" },
   { src: rh16, alt: "Coach and camper going through notes on court" },
-  { src: rh13, alt: "Flag ceremony by the lake at Robin Hood Camp" },
+  { src: rh13, alt: "Flag ceremony by the lake at Robin Hood Summer Camp" },
   { src: rh20, alt: "Camper reaching for an overhead" },
-  { src: rh07, alt: "Coach Mahendra coaching a camper at Robin Hood Camp" },
+  { src: rh07, alt: "Coach Mahendra coaching a camper at Robin Hood Summer Camp" },
   { src: rh17, alt: "Tennis Academy group on court" },
   { src: rh03, alt: "Handshake at the net after a match" },
   { src: rh08, alt: "Player tossing the ball to serve" },
   { src: rh04, alt: "Campers together at the tennis courts" },
-  { src: rh02, alt: "Practice session on the Robin Hood Camp courts" },
-  { src: rh10, alt: "Serve practice at Robin Hood Camp" },
+  { src: rh02, alt: "Practice session on the Robin Hood Summer Camp courts" },
+  { src: rh10, alt: "Serve practice at Robin Hood Summer Camp" },
   { src: rh06, alt: "Tennis Academy players in a line on court" },
   { src: rh11, alt: "Player following through on a serve" },
   { src: rh14, alt: "Footwork ladder drill with campers" },

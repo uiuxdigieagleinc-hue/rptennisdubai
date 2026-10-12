@@ -2,6 +2,7 @@
 
 import Image, { type StaticImageData } from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { AngleDownIcon, CloseIcon } from "./Icons";
 
 type Item = { src: StaticImageData; alt: string };
@@ -11,21 +12,26 @@ export default function GalleryGrid({ items, className = "" }: { items: Item[]; 
   const [open, setOpen] = useState<number | null>(null);
   const close = useCallback(() => setOpen(null), []);
   const step = useCallback((d: number) => setOpen((i) => (i === null ? i : (i + d + items.length) % items.length)), [items.length]);
+  const isOpen = open !== null;
 
   useEffect(() => {
-    if (open === null) return;
+    if (!isOpen) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
       if (e.key === "ArrowRight") step(1);
       if (e.key === "ArrowLeft") step(-1);
     };
     document.addEventListener("keydown", onKey);
+    // Lock page scroll; pad by the scrollbar width so the page behind doesn't jump sideways.
+    const scrollbar = window.innerWidth - document.documentElement.clientWidth;
     document.body.style.overflow = "hidden";
+    if (scrollbar > 0) document.body.style.paddingRight = `${scrollbar}px`;
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
     };
-  }, [open, close, step]);
+  }, [isOpen, close, step]);
 
   return (
     <>
@@ -46,41 +52,50 @@ export default function GalleryGrid({ items, className = "" }: { items: Item[]; 
         ))}
       </div>
 
-      {open !== null && (
-        <div className="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" onClick={close}>
-          <button type="button" className="lightbox__close" onClick={close} aria-label="Close" autoFocus>
-            <CloseIcon />
-          </button>
-          <button
-            type="button"
-            className="lightbox__nav lightbox__nav--prev"
-            onClick={(e) => {
-              e.stopPropagation();
-              step(-1);
-            }}
-            aria-label="Previous image"
-          >
-            <AngleDownIcon />
-          </button>
-          <div className="lightbox__img" onClick={(e) => e.stopPropagation()}>
-            <Image src={items[open].src} alt={items[open].alt} sizes="100vw" placeholder="blur" />
-          </div>
-          <button
-            type="button"
-            className="lightbox__nav lightbox__nav--next"
-            onClick={(e) => {
-              e.stopPropagation();
-              step(1);
-            }}
-            aria-label="Next image"
-          >
-            <AngleDownIcon />
-          </button>
-          <p className="lightbox__count">
-            {open + 1} / {items.length}
-          </p>
-        </div>
-      )}
+      {/* Portal to <body>: an animated [data-reveal] parent would otherwise trap the fixed overlay inside the grid. */}
+      {open !== null &&
+        createPortal(
+          <div className="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" onClick={close}>
+            <button type="button" className="lightbox__close" onClick={close} aria-label="Close" autoFocus>
+              <CloseIcon />
+            </button>
+            <button
+              type="button"
+              className="lightbox__nav lightbox__nav--prev"
+              onClick={(e) => {
+                e.stopPropagation();
+                step(-1);
+              }}
+              aria-label="Previous image"
+            >
+              <AngleDownIcon />
+            </button>
+            <div className="lightbox__img" onClick={(e) => e.stopPropagation()}>
+              <Image
+                key={items[open].src.src}
+                src={items[open].src}
+                alt={items[open].alt}
+                sizes="(max-width: 1555px) 90vw, 1400px"
+                placeholder="blur"
+              />
+            </div>
+            <button
+              type="button"
+              className="lightbox__nav lightbox__nav--next"
+              onClick={(e) => {
+                e.stopPropagation();
+                step(1);
+              }}
+              aria-label="Next image"
+            >
+              <AngleDownIcon />
+            </button>
+            <p className="lightbox__count">
+              {open + 1} / {items.length}
+            </p>
+          </div>,
+          document.body
+        )}
     </>
   );
 }

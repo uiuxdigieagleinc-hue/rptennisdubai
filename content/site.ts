@@ -32,7 +32,7 @@ export const nav: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us/" },
   { label: "Grounds", href: "/grounds/" },
-  { label: "Robin Hood Camp", href: "/robin-hood-camp/" },
+  { label: "Robin Hood Summer Camp", href: "/robin-hood-camp/" },
   {
     label: "Programs",
     href: "/programs/",

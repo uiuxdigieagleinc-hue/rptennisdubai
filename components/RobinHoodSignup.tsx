@@ -9,7 +9,7 @@ import { RH_URLS, trackEvent } from "./RobinHoodLink";
 const initial: RobinHoodLeadState = { status: "idle" };
 const REDIRECT_SECONDS = 6;
 
-// "Submit a Robin Hood Camp inquiry": collect name / email / phone on our site (our referral record),
+// "Submit a Robin Hood Summer Camp inquiry": collect name / email / phone on our site (our referral record),
 // then send the family on to Robin Hood's inquiry form.
 export default function RobinHoodSignup({
   className = "btn",
@@ -75,7 +75,7 @@ function LeadForm({ enquiry }: { enquiry: boolean }) {
         <h2 id="rh-dialog-title" className="rh-dialog__title">
           Thanks{state.name ? `, ${state.name.split(" ")[0]}` : ""}!
         </h2>
-        <p className="text">Coach Mahendra has your details and will get back to you shortly about Robin Hood Camp.</p>
+        <p className="text">Coach Mahendra has your details and will get back to you shortly about Robin Hood Summer Camp.</p>
       </div>
     );
   }
@@ -88,7 +88,7 @@ function LeadForm({ enquiry }: { enquiry: boolean }) {
           Thanks{state.name ? `, ${state.name.split(" ")[0]}` : ""}!
         </h2>
         <p className="text">
-          Coach Mahendra now has your details. Next, complete Robin Hood Camp&apos;s inquiry form.{" "}
+          Coach Mahendra now has your details. Next, complete Robin Hood Summer Camp&apos;s inquiry form.{" "}
           <strong>Please use the same name and email</strong> so we can follow up with you.
         </p>
         <a className="btn rh-dialog__go" href={RH_URLS.inquiry}>
@@ -110,12 +110,12 @@ function LeadForm({ enquiry }: { enquiry: boolean }) {
     <>
       {!enquiry && <p className="eyebrow">Step 1 of 2</p>}
       <h2 id="rh-dialog-title" className="rh-dialog__title">
-        {enquiry ? "Enquire about Robin Hood Camp" : "Submit a Robin Hood Camp inquiry"}
+        {enquiry ? "Enquire about Robin Hood Summer Camp" : "Submit a Robin Hood Summer Camp inquiry"}
       </h2>
       <p className="text rh-dialog__lead">
         {enquiry
           ? "Leave your details and Coach Mahendra will get back to you."
-          : "Leave your details for Coach Mahendra, then we’ll take you to Robin Hood Camp’s inquiry form."}
+          : "Leave your details for Coach Mahendra, then we’ll take you to Robin Hood Summer Camp’s inquiry form."}
       </p>
       <form className="form" action={action}>
         <input type="hidden" name="page" value={pathname} />

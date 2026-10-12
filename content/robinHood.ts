@@ -1,4 +1,4 @@
-// Robin Hood Camp content. Facts taken from robinhoodcamp.com (Oct 2026) — re-check with Robin Hood before launch.
+// Robin Hood Summer Camp content. Facts taken from robinhoodcamp.com (Oct 2026) — re-check with Robin Hood before launch.
 
 export const rhFacts = [
   { value: "35+", label: "Activities every day — tennis is just one of them" },
@@ -149,6 +149,6 @@ export const rhFaqs = [
   },
   {
     q: "How do we enrol?",
-    a: "Tap “Submit a Robin Hood Camp inquiry” and leave your details for Coach Mahendra. We'll then take you to Robin Hood's inquiry form, and Coach Mahendra will follow up to help with enrolment.",
+    a: "Tap “Submit a Robin Hood Summer Camp inquiry” and leave your details for Coach Mahendra. We'll then take you to Robin Hood's inquiry form, and Coach Mahendra will follow up to help with enrolment.",
   },
 ];

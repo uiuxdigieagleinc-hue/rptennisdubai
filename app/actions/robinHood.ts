@@ -30,8 +30,8 @@ export async function sendRobinHoodLead(_prev: RobinHoodLeadState, form: FormDat
   const enquiry = get("kind") === "enquiry";
   const when = new Date().toLocaleString("en-GB", { timeZone: "Asia/Dubai", dateStyle: "medium", timeStyle: "short" });
   const sent = await sendTableEmail({
-    title: `Robin Hood Camp ${enquiry ? "enquiry" : "referral"} — rptennisdubai.com`,
-    subject: `Robin Hood Camp ${enquiry ? "enquiry" : "referral"}: ${data.name}`,
+    title: `Robin Hood Summer Camp ${enquiry ? "enquiry" : "referral"} — rptennisdubai.com`,
+    subject: `Robin Hood Summer Camp ${enquiry ? "enquiry" : "referral"}: ${data.name}`,
     rows: [
       ["Name", data.name],
       ["Email", data.email],
