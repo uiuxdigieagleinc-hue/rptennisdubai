@@ -56,9 +56,9 @@ export const nav: NavItem[] = [
 
 export const locations = [
   {
-    name: "Safa British School",
-    area: "Al Wasl Road, Dubai",
-    mapQuery: "Safa British School, Al Wasl Road, Dubai",
+    name: "The English College",
+    area: "Al Wasl Road, Al Safa 1, Jumeirah, Dubai",
+    mapQuery: "The English College, Al Wasl Road, Al Safa 1, Jumeirah, Dubai",
   },
   {
     name: "Global Indian International School",

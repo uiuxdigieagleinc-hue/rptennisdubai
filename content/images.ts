@@ -11,7 +11,7 @@ import ctaBg from "@/assets/images/cta-bg.jpeg";
 import postKids from "@/assets/images/post-kids.jpeg";
 import postDubai from "@/assets/images/post-dubai-growth.jpeg";
 import postPrivate from "@/assets/images/post-private-coaching.jpeg";
-import groundSafa from "@/assets/images/ground-safa.jpeg";
+import groundEnglishCollege from "@/assets/images/ground-english-college.jpg";
 import groundGiis from "@/assets/images/ground-giis.jpeg";
 import facility from "@/assets/images/facility.jpeg";
 import programPrivate from "@/assets/images/program-private.png";
@@ -59,7 +59,7 @@ export const img = {
   postKids,
   postDubai,
   postPrivate,
-  groundSafa,
+  groundEnglishCollege,
   groundGiis,
   facility,
   programPrivate,

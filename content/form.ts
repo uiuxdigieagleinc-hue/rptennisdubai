@@ -7,7 +7,7 @@ export const programOptions = [
   "Not sure",
 ];
 
-export const locationOptions = ["Safa British School", "Global Indian International School", "Any / Flexible"];
+export const locationOptions = ["The English College", "Global Indian International School", "Any / Flexible"];
 
 export const timingOptions = [
   "Morning (before 12 PM)",

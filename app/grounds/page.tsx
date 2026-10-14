@@ -9,11 +9,11 @@ import { locations, whatsapp } from "@/content/site";
 export const metadata: Metadata = {
   title: "Grounds — Tennis Courts in Dubai",
   description:
-    "Train at Safa British School (Al Wasl Road) or Global Indian International School, Dubai. Professional courts, year-round play and equipment provided.",
+    "Train at The English College (Al Wasl Road, Al Safa 1, Jumeirah) or Global Indian International School, Dubai. Professional courts, year-round play and equipment provided.",
   alternates: { canonical: "/grounds/" },
 };
 
-const groundImages = [img.groundSafa, img.groundGiis];
+const groundImages = [img.groundEnglishCollege, img.groundGiis];
 
 export default function GroundsPage() {
   return (
