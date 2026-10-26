@@ -35,7 +35,7 @@ export default function HomePage() {
             </Link>
             <h1 className="h-display hero__title">Serve Big. Rally Point Tennis Dubai.</h1>
             <p className="hero__text">
-              Creating champions — world-class coaching for beginners to competitive players. 3 Dubai locations, 22+ years
+              Creating champions — world-class coaching for beginners to competitive players. 2 Dubai locations, 22+ years
               experience, AITA &amp; USPTR certified.
             </p>
             <div className="btn-row hero__btns">
@@ -62,7 +62,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className="stats__video" data-reveal>
-          <AutoplayVideo src="/video/coach-mahi.mp4" label="Coach Mahendra training players in Dubai" />
+          <AutoplayVideo src="/video/coach-mahi-2.mp4" label="Coach Mahendra training players in Dubai" />
         </div>
         <div className="stats__col">
           <div data-reveal>

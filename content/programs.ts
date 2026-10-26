@@ -44,7 +44,7 @@ export const faqs = [
 ];
 
 export const facilityFeatures = [
-  { title: "Professional Courts", text: "Maintained to AITA match standards at all 3 locations." },
+  { title: "Professional Courts", text: "Maintained to AITA match standards at both locations." },
   { title: "Year-Round Play", text: "7 days a week, flexible morning & evening slots." },
   { title: "Equipment Provided", text: "Balls and training equipment for all coaching sessions." },
   { title: "Central Dubai", text: "All 3 courts easily reachable from across Dubai." },
